@@ -7,25 +7,25 @@
 
 Se creó una clase main con un método que muestra un mensaje por consola.
 
-![](img/)
+![](img/CAP1ACD.png)
 
 ### 2.Modificación del código
 
 Modificamos el mensaje del System.out.println() en el Main.java, para ejecutar el programa sim volverlo a compilar. El resultado siguió siendo el mensaje anterior. Esto ocurre porque al moidificar el Main.java no modifica el archivo Main.class. El programa sigue ejecutando la versiuón compilada anteiormente.
 
-![](img/)
+![](img/CAP2ACD.png)
 
 ### 3.Compilación con Maven
 
 Ejecutamos el comando "mvn compile", haciendo que maven compile de nuevo el proyecto y actualizando los archivos del .class.
 
-![](img/)
+![](img/CAP3ACCD.png)
 
 ### 4.Ejecución después de recompilar
 
 Finalmente, se volvió a ejecutar el programa "java org.example.Main". En esta vez el podemos apreciar el - nuevo mensaje que pusimos.
 
-![](img/)
+![](img/CAP4ACCD.png)
 
 ### Conclusión
 
