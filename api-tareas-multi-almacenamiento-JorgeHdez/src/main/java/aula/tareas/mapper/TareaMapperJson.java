@@ -3,6 +3,11 @@ package aula.tareas.mapper;
 import aula.tareas.entity.TareaEntityJson;
 import aula.tareas.modelo.Tarea;
 
+/**
+ * se puede hacer tambien añadiendo esto al principio:
+ * @Component("tareaMapperJson")
+ * y quitando el final y los static
+ */
 public final class TareaMapperJson {
     private TareaMapperJson() {}
 

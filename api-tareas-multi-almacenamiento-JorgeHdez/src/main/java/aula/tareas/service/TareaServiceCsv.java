@@ -19,14 +19,13 @@ public class TareaServiceCsv implements ITareaService {
 
     @Override
     public List<Tarea> listar() {
-        // TODO: Recuperar el listado mediante el repositorio.
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        return repository.findAll();
     }
 
     @Override
     public Optional<Tarea> buscar(long id) {
-        // TODO: Consultar el repositorio con el identificador.
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        return repository.findById(id);
+
     }
 
     @Override
@@ -43,7 +42,6 @@ public class TareaServiceCsv implements ITareaService {
 
     @Override
     public boolean eliminar(long id) {
-        // TODO: Solicitar el borrado al repositorio.
-        throw new UnsupportedOperationException("Pendiente de implementar");
+        return repository.delete(id);
     }
 }

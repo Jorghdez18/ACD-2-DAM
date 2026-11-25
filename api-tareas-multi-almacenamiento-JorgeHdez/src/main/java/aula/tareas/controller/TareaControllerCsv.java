@@ -2,36 +2,48 @@ package aula.tareas.controller;
 
 import aula.tareas.api.TareaRequest;
 import aula.tareas.api.TareaResponse;
+import aula.tareas.mapper.TareaMapperCsv;
+import aula.tareas.modelo.Tarea;
 import aula.tareas.service.ITareaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/csv/tareas")
 public class TareaControllerCsv {
     private final ITareaService servicio;
+    private final TareaMapperCsv mapper;
 
-    public TareaControllerCsv(@Qualifier("tareaServiceCsv") ITareaService servicio) {
+    public TareaControllerCsv(@Qualifier("tareaServiceCsv") ITareaService servicio, TareaMapperCsv tareaMapperCsv) {
         this.servicio = servicio;
+        this.mapper = tareaMapperCsv;
     }
 
-    // TODO: Definir la ruta base /api/csv/tareas.
-
+    @GetMapping
     public List<TareaResponse> listar() {
-        // TODO: Exponer el listado y convertir las tareas en respuestas.
-        throw new UnsupportedOperationException("Pendiente de implementar");
-    }
+       // return mapper.toEntity(servicio.listar());
+        throw new IllegalArgumentException();
 
-    public ResponseEntity<TareaResponse> buscar(long id) {
-        // TODO: Exponer la consulta por ID y gestionar la ausencia de la tarea.
-        throw new UnsupportedOperationException("Pendiente de implementar");
-    }
 
-    public ResponseEntity<TareaResponse> crear(TareaRequest request) {
-        // TODO: Exponer el alta, validar el cuerpo y componer la respuesta HTTP.
-        throw new UnsupportedOperationException("Pendiente de implementar");
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<TareaResponse> buscar(@PathVariable long id) {
+        //return ResponseEntity.ofNullable(servicio.buscar(id));
+        throw new IllegalArgumentException();
+
+
+    }
+    @PostMapping
+    public ResponseEntity<TareaResponse> crear(@Valid @RequestBody TareaRequest request) {
+        //TareaResponse tarea = servicio.crear(request.titulo());
+        //return ResponseEntity.created(URI.create("/api/tareas/" + tarea.id())).body(tarea);
+        throw new IllegalArgumentException();
+
     }
 
     public ResponseEntity<TareaResponse> actualizar(long id, TareaRequest request) {
